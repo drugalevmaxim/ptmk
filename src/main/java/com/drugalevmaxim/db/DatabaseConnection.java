@@ -16,11 +16,10 @@ public class DatabaseConnection {
     public static void generateTable() throws SQLException {
         String sql = """
                 CREATE TABLE `employees` (
-                  `fullName` varchar(96) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-                  `birthdate` date NOT NULL,
-                  `gender` enum('m','f') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-                  KEY `employees_fullnameandbirthday_idx` (`fullName`,`birthdate`) USING BTREE,
-                  FULLTEXT KEY `employees_fullName_IDX` (`fullName`)
+                    `fullName` varchar(96) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+                    `birthdate` date NOT NULL,
+                    `gender` enum('m','f') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+                     KEY `employees_fullName_IDX` (`fullName`) USING BTREE
                 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;""";
             Connection connection = DriverManager.getConnection(URL, USER, PASSWORD);
             connection.createStatement().executeUpdate(sql);
