@@ -5,9 +5,9 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DatabaseConnection {
-    private static final String URL = "jdbc:mysql://localhost:3307/ptmk?rewriteBatchedStatements=true";
-    private static final String USER = "root";
-    private static final String PASSWORD = "123456";
+    private static final String URL = System.getenv("DATABASE_URL") + "/" + System.getenv("DATABASE_NAME") + "?rewriteBatchedStatements=true";
+    private static final String USER =  System.getenv("DATABASE_USERNAME");
+    private static final String PASSWORD =  System.getenv("DATABASE_PASSWORD");
 
     public static Connection getConnection() throws SQLException {
         return DriverManager.getConnection(URL, USER, PASSWORD);

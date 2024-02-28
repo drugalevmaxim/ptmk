@@ -18,11 +18,15 @@ For compilation, you need:
 - IDE
 
 ### How to run
+
 1. Compile project with ```mvn install```
 2. Open ```target``` directory
-3. Run ```java -jar ptmk-X.X.X-jar-with-dependencies.jar```
+3. Set system variables ```DATABASE_URL```, ```DATABASE_NAME```, ```DATABASE_USERNAME``` and ```DATABASE_PASSWORD```
+    i.e. ```jdbc:mysql://localhost:3307```, ```ptmk```, ```root```, ```123456```
+4. Run ```java -jar ptmk-X.X.X-jar-with-dependencies.jar```
 
 ### Release notes
+- **0.0.2** - Reworked database credentials 
 - **0.0.1** - Initial release 
 
 ### Todos

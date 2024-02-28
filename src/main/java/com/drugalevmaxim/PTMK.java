@@ -73,7 +73,7 @@ public class PTMK {
                 List<Employee> employees = employeeService.getAllUniqueEmployees();
                 long executionTime = System.currentTimeMillis() - start;
                 printEmployees(employees);
-                System.out.printf("Done in %d ms", sqlRepo.getLatestRequestExecutionTime());
+                System.out.printf("Done in %d ms", executionTime);
                 break;
             }
             case "4": {
